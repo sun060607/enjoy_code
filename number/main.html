@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>계산기</title>
+    <style>
+      body {
+  padding:1.5em;
+  background: #f5f5f5
+}
+
+table {
+  border: 1px #a39485 solid;
+  font-size: .9em;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th {
+  text-align: left;
+}
+  
+thead {
+  font-weight: bold;
+  color: #fff;
+  background: #73685d;
+}
+  
+ td, th {
+  padding: 1em .5em;
+  vertical-align: middle;
+}
+  
+ td {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+}
+
+a {
+  color: #73685d;
+}
+  
+ @media all and (max-width: 768px) {
+    
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  th {
+    text-align: right;
+  }
+  
+  table {
+    position: relative; 
+    padding-bottom: 0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+  
+  thead {
+    float: left;
+    white-space: nowrap;
+  }
+  
+  tbody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  th {
+    border-bottom: 1px solid #a39485;
+  }
+  
+  td {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  
+  }
+    </style>
+    <script src="num.js"></script>
+  </head>
+  <body>
+    <!--계산기 -->
+
+    <table border="1">
+        <tr>
+            <td class="aa" colspan="4"><input type="text" id="input" readonly></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text" id="output" readonly></td>
+        </tr>
+        <tr>
+            <td onclick="swap()">+-</td>
+            <td onclick="sqrt()">루트</td>
+            <td onclick="square()">제곱</td>
+            <td onclick="point()">1/X</td>
+        </tr>
+        <tr>
+            <td onclick="outputclear()">CE</td>
+            <td onclick="allclear()">C</td>
+            <td onclick="tdelete()"><</td>
+            <td onclick="sign('/')">÷</td>
+        </tr>
+        <tr>
+            <td onclick="send(7)">7</td>
+            <td onclick="send(8)">8</td>
+            <td onclick="send(9)">9</td>
+            <td onclick="sign('*')">X</td>
+        </tr>
+        <tr>
+            <td onclick="send(4)">4</td>
+            <td onclick="send(5)">5</td>
+            <td onclick="send(6)">6</td>
+            <td onclick="sign('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="send(1)">1</td>
+            <td onclick="send(2)">2</td>
+            <td onclick="send(3)">3</td>
+            <td onclick="sign('+')">+</td>
+        </tr>
+        <tr>
+        <td> </td>
+        <td onclick="send(0)">0</td>
+        <td onclick="send('.')">.</td>
+        <td onclick="result()">=</td>
+        </tr>
+        <div>
+            <tr>
+                <td colspan="4"><textarea id="list" rows="40" cols="22"></textarea></td>
+            </tr>
+        </div>
+    </table>
+    
+  </body>
+</html>
